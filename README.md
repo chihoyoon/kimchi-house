@@ -1,1 +1,1 @@
-# Kimchi House Website Building Project
+# The Project Building a Small Food Court (Kimchi House) Website
