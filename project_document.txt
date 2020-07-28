@@ -1,0 +1,27 @@
+## project document ##
+
+1. Project Name: Development of the Kimchi House Website
+
+2. Purpose
+(1) To help the store that are taking a serious blow to their operations due to the COVID. This store is located in downtown, but a lot of office are closed and the floating population has declined due to the Corona crisis.
+(2) To produce a store's website to maximize its promotional effect.
+(3) From a personal perspective, It will help me to increase experience and learning about web production and operation through the project process.
+
+3. Client's Needs
+(1) Publicity for his store.
+(2) Menus and prices to be implemented on the website.
+(3) To enter and modify important information on the website by himself.
+
+4. Approximate appearance of the website to be implemented
+(1) Implement restaurant menus and prices in the form of tables.
+(2) Implement menus and prices as a database and configure the administrator screen to facilitate entry, modification, and deletion.
+(3) Map the location of the restaurant.
+(4) Implement the administrator blog screen.
+
+5. Schedule
+(1) Outline rough - Week 5 of July
+(2) Coding in HTML format - Week 5 of July
+(3) Modifying coding to Node.js format - Week 2 of August
+(4) Checking and correcting coding - Week 4 of August
+(5) Secure servers and a domain address - Week 4 of August
+(4) Building and publishing a server - Week 1 of September
