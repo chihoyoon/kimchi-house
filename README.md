@@ -1,1 +1,1 @@
-# The Project Building a Small Restaurant (Kimchi House) Website
+# Development of a Small Restaurant (Kimchi House) Website
