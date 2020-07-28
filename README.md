@@ -1,1 +1,1 @@
-# kimchi House Website Building Project
+# Kimchi House Website Building Project
