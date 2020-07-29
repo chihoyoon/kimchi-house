@@ -1,1 +1,1 @@
-# Development of a Small Restaurant (Kimchi House) Website
+# Web development of small restaurant (Kimchi House)
