@@ -1,6 +1,6 @@
 ## project document ##
 
-1. Project Name: Development of the Kimchi House Website
+1. Project Name: Web development of small restaurant (Kimchi House)
 
 2. Purpose
 (1) To help the store that are taking a serious blow to their operations due to the COVID. This store is located in downtown, but a lot of office are closed and the floating population has declined due to the Corona crisis.
