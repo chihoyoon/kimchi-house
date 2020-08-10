@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/chihoyoon/kimchi-house#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "express-handlebars": "^5.1.0"
   }
 }
