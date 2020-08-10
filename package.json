@@ -1,0 +1,21 @@
+{
+  "name": "kimchi-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chihoyoon/kimchi-house.git",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chihoyoon/kimchi-house/issues"
+  },
+  "homepage": "https://github.com/chihoyoon/kimchi-house#readme"
+}
