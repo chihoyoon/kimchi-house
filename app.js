@@ -8,7 +8,6 @@ server.engine(
   hbs({
     extname: "hbs",
     defaultLayout: "layout.hbs",
-    partialsDir: "partials",
   })
 );
 server.set("view engine", "hbs");
@@ -16,7 +15,7 @@ server.set("view engine", "hbs");
 server.use(express.static(__dirname + "/public"));
 
 server.get("/", (req, res) => {
-  res.render("home");
+  res.render("index");
 });
 
 server.get("/menu", (req, res) => {
