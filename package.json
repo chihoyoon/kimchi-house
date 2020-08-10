@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/chihoyoon/kimchi-house/issues"
   },
-  "homepage": "https://github.com/chihoyoon/kimchi-house#readme"
+  "homepage": "https://github.com/chihoyoon/kimchi-house#readme",
+  "dependencies": {
+    "express-handlebars": "^5.1.0"
+  }
 }
