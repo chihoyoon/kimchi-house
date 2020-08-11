@@ -12,7 +12,7 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Danny",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chihoyoon/kimchi-house/issues"
