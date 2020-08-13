@@ -1,7 +1,19 @@
 const express = require("express");
 const hbs = require("express-handlebars");
+const db = require("./lib/db");
 
 const server = express();
+
+// mysql
+db.query("SELECT * from menu", function (error, results, fields) {
+  if (error) {
+    console.log(error);
+  }
+  console.log(results);
+});
+
+db.end();
+//mysql
 
 server.engine(
   "hbs",
