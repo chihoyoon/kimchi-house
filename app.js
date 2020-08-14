@@ -2,48 +2,72 @@ const express = require("express");
 const hbs = require("express-handlebars");
 const db = require("./lib/db");
 
-const server = express();
+const app = express();
 
 // mysql
-db.query("SELECT * from menu", function (error, results, fields) {
-  if (error) {
-    console.log(error);
-  }
-  console.log(results);
-});
+// db.query("SELECT * from menu", function (error, results, fields) {
+//   if (error) {
+//     console.log(error);
+//   }
+//   console.log(results);
+// });
 
-db.end();
+// db.end();
 //mysql
 
-server.engine(
+app.engine(
   "hbs",
   hbs({
     extname: "hbs",
-    defaultLayout: "layout.hbs",
+    defaultLayout: "main.hbs",
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/",
   })
 );
-server.set("view engine", "hbs");
+app.set("view engine", "hbs");
 
-server.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
-server.get("/", (req, res) => {
-  res.render("index");
+app.get("/", (req, res) => {
+  var name = [];
+  var weblink = [];
+
+  var delivery = [];
+
+  db.query("SELECT * from delivery_service", function (error, results) {
+    if (error) throw error;
+
+    var service = results;
+
+    for (let i = 0; i < service.length; i++) {
+      name.push(service[i].service_name);
+      weblink.push(service[i].website);
+
+      delivery[i] = `<a href="${weblink[i]}" target="_blank">${name[i]}</a>`;
+    }
+
+    res.render("index", {
+      delivery: delivery,
+    });
+  });
+
+  db.end();
 });
 
-server.get("/menu", (req, res) => {
+app.get("/menu", (req, res) => {
   res.render("menu");
 });
 
-server.get("/blog", (req, res) => {
+app.get("/blog", (req, res) => {
   res.render("blog");
 });
 
-server.get("/contact", (req, res) => {
+app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-server.use((req, res) => {
+app.use((req, res) => {
   res.writeHead(404);
 });
 
-server.listen(3000);
+app.listen(3000);

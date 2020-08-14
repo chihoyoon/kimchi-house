@@ -1,35 +1,16 @@
-<div class="container-md p-5">
-    <img src="./img/main.gif" class="img-fluid" alt="Responsive image">
-</div>
+{{> index_header }}
+
 <div class="container-md p-5 text-white bg-dark">
     <h5>DELIVERY ORDERS</h5>
+
+
+
     <ul>
+        {{#delivery}}
         <br>
-        <li><a href="https://www.skipthedishes.com/kim-chi-house" target="_blank">SKIP THE DISHES</a></li>
+        <li>{{{this}}}</li>
         <br>
-        <li><a href="https://www.doordash.com/store/kim-chi-house-calgary-1048518/en-US" target="_blank">DOORDASH</a>
-        </li>
-        <br>
-        <li><a href="https://www.fantuan.ca/delivery/en/" target="_blank">FANTUAN</a></li>
-    </ul>
+        {{/delivery}}
 </div>
-<div class="container-md p-5 text-white bg-dark">
-    <div class="row">
-        <div class="col-md">
-            <h5>OPEN HOUR</h5><br>
-            <P>MON - SAT</P>
-            <P>11:00 AM - 08:00 PM</P>
-            <P>SUN : CLOSED</P><br><br>
-        </div>
-        <div class="col-md">
-            <h5>CONTACT</h5><br>
-            <P>403-265-8098</P><br><br>
-        </div>
-        <div class="col-md">
-            <h5>LOCATION</h5><br>
-            <P>111-303 CENTRE STREET</P>
-            <P>CALGARY AB</P>
-            <P>T2G 2B9</P><br><br>
-        </div>
-    </div>
-</div>
+
+{{> index_footer }}
