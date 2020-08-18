@@ -4,17 +4,6 @@ const db = require("./lib/db");
 
 const app = express();
 
-//  mysql
-// db.query("SELECT * from menu", function (error, results, fields) {
-//   if (error) throw error;
-
-//   console.log(results);
-
-// });
-
-// db.end();
-//mysql
-
 app.engine(
   "hbs",
   hbs({
@@ -32,21 +21,17 @@ app.get("/", (req, res) => {
   db.query("SELECT * FROM delivery_service", function (error, results) {
     if (error) throw error;
 
-    var name = [];
-    var weblink = [];
     var delivery = [];
 
     for (let i = 0; i < results.length; i++) {
-      name.push(results[i].service_name);
-      weblink.push(results[i].website);
-
-      delivery[i] = `<a href="${weblink[i]}" target="_blank">${name[i]}</a>`;
+      delivery[
+        i
+      ] = `<a href="${results[i].website}" target="_blank">${results[i].service_name}</a>`;
     }
     res.render("index", {
       delivery: delivery,
     });
   });
-
   db.end();
 });
 
@@ -57,48 +42,188 @@ app.get("/menu", (req, res) => {
       if (error) throw error;
 
       var menu_1 = [];
-      var menu_name_1 = [];
-      var price_1 = [];
-      var comment_1 = [];
-      var menu_img_1 = [];
+      var menu_2 = [];
+      var menu_3 = [];
+      var menu_4 = [];
+      var menu_5 = [];
+      var menu_6 = [];
+      var menu_7 = [];
+      var menu_8 = [];
+      var menu_9 = [];
 
       for (let i = 0; i < results.length; i++) {
         if (results[i].menu_class_id === 1) {
           var menu_class_1 = results[i].menu_class_name;
+          menu_1[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
 
-          menu_name_1.push(results[i].menu_name);
-          price_1.push(results[i].price);
-          comment_1.push(results[i].comment);
-          menu_img_1.push(results[i].image_file_name);
-          menu_1[i] = `<table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col" colspan="4">
-                                    <h3> ${menu_class_1} </h3>
-                                </th>
-                            </tr>
-                        </thead>
-                
-                        <tbody>
-                           <tr>
-                            <th scope="row" rowlspan="2">
-                              <h4>${menu_name_1[i]}</h4>
-                             </th>
-                            <td>
-                              <h5>\$${price_1[i]}</h5>
-                            </td>
-                            <td rowspan="2"><img src="./img/${menu_img_1[i]}" class="rounded mx-auto d-block" width="150" height="150">
-                            </td>
-                          </tr>
-                           <tr>
-                             <td colspan="2">${comment_1[i]}</td>
-                          </tr>
-                        </tbody>
-                      </table>`;
+        if (results[i].menu_class_id === 2) {
+          var menu_class_2 = results[i].menu_class_name;
+          menu_2[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 3) {
+          var menu_class_3 = results[i].menu_class_name;
+          menu_3[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 4) {
+          var menu_class_4 = results[i].menu_class_name;
+          menu_4[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 5) {
+          var menu_class_5 = results[i].menu_class_name;
+          menu_5[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 6) {
+          var menu_class_6 = results[i].menu_class_name;
+          menu_6[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 7) {
+          var menu_class_7 = results[i].menu_class_name;
+          menu_7[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 8) {
+          var menu_class_8 = results[i].menu_class_name;
+          menu_8[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
+        }
+
+        if (results[i].menu_class_id === 9) {
+          var menu_class_9 = results[i].menu_class_name;
+          menu_9[i] = `<tr>
+                        <th scope="row" rowlspan="2">
+                            <h4>${results[i].menu_name}</h4>
+                        </th>
+                        <td>
+                            <h5>\$${results[i].price}</h5>
+                        </td>
+                        <td rowspan="2"><img src="./img/${results[i].image_file_name}" class="rounded mx-auto d-block" width="150" height="150">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">${results[i].comment}</td>
+                    </tr>`;
         }
       }
       res.render("menu", {
+        menu_class_1: menu_class_1,
         menu_1: menu_1,
+        menu_class_2: menu_class_2,
+        menu_2: menu_2,
+        menu_class_3: menu_class_3,
+        menu_3: menu_3,
+        menu_class_4: menu_class_4,
+        menu_4: menu_4,
+        menu_class_5: menu_class_5,
+        menu_5: menu_5,
+        menu_class_6: menu_class_6,
+        menu_6: menu_6,
+        menu_class_7: menu_class_7,
+        menu_7: menu_7,
+        menu_class_8: menu_class_8,
+        menu_8: menu_8,
+        menu_class_9: menu_class_9,
+        menu_9: menu_9,
       });
     }
   );
@@ -107,15 +232,32 @@ app.get("/menu", (req, res) => {
 });
 
 app.get("/blog", (req, res) => {
-  res.render("blog");
+  db.query("SELECT * FROM blog", function (error, results) {
+    if (error) throw error;
+
+    var blog = [];
+
+    for (let i = 0; i < results.length; i++) {
+      blog[i] = `<h1 class="text-center">${results[i].tittle}</h1>
+                  <h5>${results[i].author}</h5>
+                  <h6>${results[i].date}</h6>
+                  <hr class="bg-secondary">
+                  <p>${results[i].description}</p>`;
+    }
+    blog.reverse();
+    res.render("blog", {
+      blog: blog,
+    });
+  });
+  db.end();
 });
 
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-app.use((req, res) => {
-  res.writeHead(404);
+server.use((req, res) => {
+  res.render("404");
 });
 
 app.listen(3000);
