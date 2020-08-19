@@ -52,6 +52,10 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+app.use("/login", (req, res) => {
+  res.render("login");
+});
+
 app.get("/admin", (req, res) => {
   res.render("admin");
 });
