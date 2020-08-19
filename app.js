@@ -35,6 +35,10 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+
 app.use((req, res) => {
   res.render("404");
 });
