@@ -1,102 +1,259 @@
 <hr class="m-0 bg-secondary" />
-
-<h1>MENU</h1><br>
-
-<hr class="m-0 bg-secondary" /><br>
-
-<h3>INSERT</h3><br>
-
-<form>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_1" value="1" />
-        <label class="form-check-label" for="inlineRadio1">{{menu_class_1}}</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_2" value="2" />
-        <label class="form-check-label" for="inlineRadio2">NOODLES AND RICE CAKES</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_3" value="3" />
-        <label class="form-check-label" for="inlineRadio3">STONE BOWL BIBIMBAP</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_4" value="4" />
-        <label class="form-check-label" for="inlineRadio1">MEAT AND SEAFOOD</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_5" value="5" />
-        <label class="form-check-label" for="inlineRadio2">SOUP AND STEW</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_6" value="6" />
-        <label class="form-check-label" for="inlineRadio3">APPETIZERS</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_7" value="7" />
-        <label class="form-check-label" for="inlineRadio1">SIDE ORDERS</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_8" value="8" />
-        <label class="form-check-label" for="inlineRadio2">ADDITIONAL</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="class_id_9" value="9" />
-        <label class="form-check-label" for="inlineRadio3">DRINKS</label>
-    </div>
-    <div class="form-row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="MENU" />
+<div class="container text-white">
+    <h1>MENU</h1>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_1}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_1}}
+            {{{this}}}
+            {{/menu_1}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_2}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_2}}
+            {{{this}}}
+            {{/menu_2}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_3}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_3}}
+            {{{this}}}
+            {{/menu_3}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_4}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_4}}
+            {{{this}}}
+            {{/menu_4}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_5}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_5}}
+            {{{this}}}
+            {{/menu_5}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_6}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_6}}
+            {{{this}}}
+            {{/menu_6}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_7}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_7}}
+            {{{this}}}
+            {{/menu_7}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_8}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_8}}
+            {{{this}}}
+            {{/menu_8}}
+        </tbody>
+    </table>
+</div>
+<div class="container text-white">
+    <h3>{{menu_class_9}}</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MENU</th>
+                <th>PRICE</th>
+                <th>COMMENT</th>
+                <th>IMAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#menu_9}}
+            {{{this}}}
+            {{/menu_9}}
+        </tbody>
+    </table>
+</div>
+<br>
+<hr class="m-0 bg-secondary" />
+<br>
+<div class="container text-white">
+    <form action="/admin/menu/price_modify" method="post">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" name="id" placeholder="ID" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="price" placeholder="PRICE" />
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary col-md">PRICE MODIFY</button>
+            </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="PRICE" />
+    </form>
+    <br>
+    <hr class="m-0 bg-secondary" />
+    <br>
+    <form action="/admin/menu/modify" method="post">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" name="id" placeholder="ID" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="class_id" placeholder="CLASS_ID" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="menu" placeholder="MENU" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="price" placeholder="PRICE" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="image" placeholder="IMAGE" />
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary col-md">MODIFY</button>
+            </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="COMMENT" />
+    </form>
+    <br>
+    <hr class="m-0 bg-secondary" />
+    <br>
+    <form action="/admin/menu/delete" method="post">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" name="id" placeholder="ID" />
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary col-md">DELETE</button>
+            </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="IMAGE" />
+    </form>
+    <br>
+    <hr class="m-0 bg-secondary" />
+    <br>
+    <form action="/admin/menu/create" method="post">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" name="class_id" placeholder="CLASS" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="menu" placeholder="MENU" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="price" placeholder="PRICE" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="image" placeholder="IMAGE" />
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary col-md">CREATE</button>
+            </div>
         </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">INSERT</button>
-        </div>
-    </div>
-</form><br>
-
-<hr class="m-0 bg-secondary" /><br>
-
-<h3>INSERT & Delete</h3><br>
-
-<h5>{{menu_class_1}}</h5>
-
-<form>
-    <div class="form-row">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="menu_select"
-                value="menu_select" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="ID" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="CLASS" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="MENU" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="PRICE" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="COMMENT" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="IMAGE" />
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">UPDATE</button>
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">DELETE</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>

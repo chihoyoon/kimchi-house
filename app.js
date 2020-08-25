@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const index = require("./lib/index");
 const menu = require("./lib/menu");
 const blog = require("./lib/blog");
-// const admin_menu = require("./lib/admin_menu");
-// const admin_blog = require("./lib/admin_blog");
+const admin_menu = require("./lib/admin_menu");
+const admin_blog = require("./lib/admin_blog");
 const admin_delivery = require("./lib/admin_delivery");
 
 const db = require("./lib/db");
@@ -44,15 +44,15 @@ app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-  index.body(req, res);
+  index._body(req, res);
 });
 
 app.get("/menu", (req, res) => {
-  menu.body(req, res);
+  menu._body(req, res);
 });
 
 app.get("/blog", (req, res) => {
-  blog.body(req, res);
+  blog._body(req, res);
 });
 
 app.get("/contact", (req, res) => {
@@ -86,15 +86,52 @@ app.get("/admin", (req, res) => {
 });
 
 app.get("/admin/menu", (req, res) => {
-  res.render("admin_menu");
+  admin_menu._body(req, res);
+});
+
+app.post("/admin/menu/price_modify", (req, res) => {
+  db.query(
+    `UPDATE menu SET price=${req.body.price} Where id=${req.body.id}`,
+    function (err, result) {
+      if (err) throw err;
+      res.redirect("/admin/menu");
+    }
+  );
+});
+
+app.post("/admin/menu/modify", (req, res) => {
+  db.query(
+    `UPDATE menu SET class_id=${req.body.class_id}, menu='${req.body.menu}', price=${req.body.price}, image='${req.body.image}', comment='${req.body.comment}' Where id=${req.body.id}`,
+    function (err, result) {
+      if (err) throw err;
+      res.redirect("/admin/menu");
+    }
+  );
+});
+
+app.post("/admin/menu/delete", (req, res) => {
+  db.query(`DELETE FROM menu Where id=${req.body.id}`, function (err, result) {
+    if (err) throw err;
+    res.redirect("/admin/menu");
+  });
+});
+
+app.post("/admin/menu/create", (req, res) => {
+  db.query(
+    `INSERT INTO menu (class_id, menu, price, image, comment) VALUES (${req.body.class_id}, '${req.body.menu}', ${req.body.price}, '${req.body.image}', '${req.body.comment}')`,
+    function (err, result) {
+      if (err) throw err;
+      res.redirect("/admin/menu");
+    }
+  );
 });
 
 app.get("/admin/blog", (req, res) => {
-  res.render("admin_blog");
+  admin_blog._body(req, res);
 });
 
 app.get("/admin/delivery", (req, res) => {
-  admin_delivery.body(req, res);
+  admin_delivery._body(req, res);
 });
 
 app.post("/admin/delivery/modify", (req, res) => {
@@ -108,7 +145,7 @@ app.post("/admin/delivery/modify", (req, res) => {
 });
 
 app.post("/admin/delivery/delete", (req, res) => {
-  db.query(`DELETE FROM delivery_service Where id=${req.body.id}`, function (
+  db.query(`DELETE FROM menu Where id=${req.body.id}')`, function (
     err,
     result
   ) {

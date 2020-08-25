@@ -7,68 +7,42 @@
                 <th>TITTLE</th>
                 <th>AUTHOR</th>
                 <th>DATE</th>
-                <th>DESCRIPTION</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>id</td>
-                <td>tittle</td>
-                <td>author</td>
-                <td>date</td>
-                <td>description</td>
-            </tr>
+            {{#blog}}
+            {{{this}}}
+            {{/blog}}
         </tbody>
     </table>
+    <hr class="m-0 bg-secondary" />
+    <div<div class="row">
+        <div class="col-sm-4">
+            <form action="/admin/blog/modify" method="GET">
+                <div class="col">
+                    <input type="text" class="form-control" name="id" placeholder="ID" />
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary col-md">MODIFY</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <form action="/admin/blog/create" method="GET">
+                <div class="col">
+                    <button type="button" class="btn btn-primary col-md">CREATE</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <form action="/admin/blog/delete" method="POST">
+                <div class="col">
+                    <input type="text" class="form-control" name="id" placeholder="ID" />
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary col-md">DELETE</button>
+                </div>
+            </form>
+        </div>
 </div>
-
-<hr class="m-0 bg-secondary" />
-
-<form>
-    <div class="form-row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="ID" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="SERVICE" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="WEBSITE" />
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">INSERT</button>
-        </div>
-    </div>
-</form>
-
-<hr class="m-0 bg-secondary" />
-
-<form>
-    <div class="form-row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="ID" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="SERVICE" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="WEBSITE" />
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">UPDATE</button>
-        </div>
-    </div>
-</form>
-
-<hr class="m-0 bg-secondary" />
-
-<form>
-    <div class="form-row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="ID" />
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">DELETE</button>
-        </div>
-    </div>
-</form>
+</div>
