@@ -89,14 +89,46 @@ app.get("/admin/menu", (req, res) => {
   admin_menu._body(req, res);
 });
 
-app.post("/admin/menu/price_modify", (req, res) => {
-  db.query(
-    `UPDATE menu SET price=${req.body.price} Where id=${req.body.id}`,
-    function (err, result) {
-      if (err) throw err;
-      res.redirect("/admin/menu");
-    }
-  );
+var _menu = [];
+
+app.post("/admin/menu", (req, res) => {
+  db.query(`SELECT * FROM menu WHERE id = ${req.body.id}`, function (
+    err,
+    results
+  ) {
+    if (err) throw err;
+    _menu.push(`<div class="form-row">
+                    <div class="col">
+                        <input type="text" readonly class="form-control" name="id" value="${results[0].id}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="class_id" value="${results[0].class_id}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="menu" value="${results[0].menu}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="price" value="${results[0].price}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="comment" value="${results[0].comment}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="image" value="${results[0].image}" />
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary col-md">MODIFY</button>
+                    </div>
+                </div>`);
+
+    res.redirect("/admin/blog/modify");
+  });
+});
+
+app.get("/admin/menu/modify", (req, res) => {
+  res.render("admin_menu_modify", {
+    _menu: _menu,
+  });
 });
 
 app.post("/admin/menu/modify", (req, res) => {

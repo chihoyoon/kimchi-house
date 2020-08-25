@@ -175,85 +175,33 @@
 </div>
 <br>
 <hr class="m-0 bg-secondary" />
-<br>
 <div class="container text-white">
-    <form action="/admin/menu/price_modify" method="post">
-        <div class="form-row">
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <form action="/admin/menu" method="POST">
             <div class="col">
                 <input type="text" class="form-control" name="id" placeholder="ID" />
             </div>
             <div class="col">
-                <input type="text" class="form-control" name="price" placeholder="PRICE" />
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary col-md">PRICE MODIFY</button>
-            </div>
-        </div>
-    </form>
-    <br>
-    <hr class="m-0 bg-secondary" />
-    <br>
-    <form action="/admin/menu/modify" method="post">
-        <div class="form-row">
-            <div class="col">
-                <input type="text" class="form-control" name="id" placeholder="ID" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="class_id" placeholder="CLASS_ID" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="menu" placeholder="MENU" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="price" placeholder="PRICE" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="image" placeholder="IMAGE" />
-            </div>
-            <div class="col-auto">
                 <button type="submit" class="btn btn-primary col-md">MODIFY</button>
             </div>
-        </div>
-    </form>
-    <br>
-    <hr class="m-0 bg-secondary" />
-    <br>
-    <form action="/admin/menu/delete" method="post">
-        <div class="form-row">
+        </form>
+    </div>
+    <div class="col-sm-4">
+        <a href="/admin/menu/create">
+            <button type="button" class="btn btn-primary col-md">CREATE</button>
+        </a>
+    </div>
+    <div class="col-sm-4">
+        <form action="/admin/blog/delete" method="POST">
             <div class="col">
                 <input type="text" class="form-control" name="id" placeholder="ID" />
             </div>
-            <div class="col-auto">
+            <div class="col">
                 <button type="submit" class="btn btn-primary col-md">DELETE</button>
             </div>
-        </div>
-    </form>
-    <br>
-    <hr class="m-0 bg-secondary" />
-    <br>
-    <form action="/admin/menu/create" method="post">
-        <div class="form-row">
-            <div class="col">
-                <input type="text" class="form-control" name="class_id" placeholder="CLASS" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="menu" placeholder="MENU" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="price" placeholder="PRICE" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="image" placeholder="IMAGE" />
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary col-md">CREATE</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
+</div>
 </div>
