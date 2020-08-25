@@ -130,6 +130,80 @@ app.get("/admin/blog", (req, res) => {
   admin_blog._body(req, res);
 });
 
+var _blog = [];
+
+app.post("/admin/blog", (req, res) => {
+  db.query(`SELECT * FROM blog WHERE id = ${req.body.id}`, function (
+    err,
+    results
+  ) {
+    if (err) throw err;
+    _blog.push(`<div class="form-row">
+                    <div class="col-sm-3">
+                        <input type="text" readonly class="form-control" name="id" value="${results[0].id}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="tittle" value="${results[0].tittle}" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <textarea class="form-control" name="description">${results[0].description}</textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                      <input type="date" class="form-control" name="date" value="${results[0].date}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="author" value="${results[0].author}" />
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary col-md">MODIFY</button>
+                    </div>
+                </div>`);
+
+    res.redirect("/admin/blog/modify");
+  });
+});
+
+app.get("/admin/blog/modify", (req, res) => {
+  res.render("admin_blog_modify", {
+    _blog: _blog,
+  });
+});
+
+app.post("/admin/blog/modify", (req, res) => {
+  db.query(
+    `UPDATE blog SET tittle='${req.body.tittle}', author='${req.body.author}', date='${req.body.date}', description='${req.body.description}' Where id=${req.body.id}`,
+    function (err, result) {
+      if (err) throw err;
+      res.redirect("/admin/blog");
+    }
+  );
+});
+
+app.get("/admin/blog/create", (req, res) => {
+  res.render("admin_blog_create");
+});
+
+app.post("/admin/blog/create", (req, res) => {
+  db.query(
+    `INSERT INTO blog (tittle, author, date, description) VALUES (${req.body.tittle}, '${req.body.author}', now(), '${req.body.description}')`,
+    function (err, result) {
+      if (err) throw err;
+      res.redirect("/admin/blog");
+    }
+  );
+});
+
+app.post("/admin/blog/delete", (req, res) => {
+  db.query(`DELETE FROM blog Where id=${req.body.id}`, function (err, result) {
+    if (err) throw err;
+    res.redirect("/admin/blog");
+  });
+});
+
 app.get("/admin/delivery", (req, res) => {
   admin_delivery._body(req, res);
 });
@@ -145,10 +219,7 @@ app.post("/admin/delivery/modify", (req, res) => {
 });
 
 app.post("/admin/delivery/delete", (req, res) => {
-  db.query(`DELETE FROM menu Where id=${req.body.id}')`, function (
-    err,
-    result
-  ) {
+  db.query(`DELETE FROM menu Where id=${req.body.id}`, function (err, result) {
     if (err) throw err;
     res.redirect("/admin/delivery");
   });

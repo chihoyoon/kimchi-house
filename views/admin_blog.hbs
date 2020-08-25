@@ -1,5 +1,5 @@
 <div class="container text-white">
-    <h2>MENU</h2>
+    <h2>BLOG</h2>
     <table class="table table-dark table-hover">
         <thead>
             <tr>
@@ -18,7 +18,7 @@
     <hr class="m-0 bg-secondary" />
     <div<div class="row">
         <div class="col-sm-4">
-            <form action="/admin/blog/modify" method="GET">
+            <form action="/admin/blog" method="POST">
                 <div class="col">
                     <input type="text" class="form-control" name="id" placeholder="ID" />
                 </div>
@@ -28,11 +28,9 @@
             </form>
         </div>
         <div class="col-sm-4">
-            <form action="/admin/blog/create" method="GET">
-                <div class="col">
-                    <button type="button" class="btn btn-primary col-md">CREATE</button>
-                </div>
-            </form>
+            <a href="/admin/blog/create">
+                <button type="button" class="btn btn-primary col-md">CREATE</button>
+            </a>
         </div>
         <div class="col-sm-4">
             <form action="/admin/blog/delete" method="POST">
