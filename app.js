@@ -70,13 +70,17 @@ app.post("/login", (req, res) => {
   db.query("SELECT * from user", function (error, results) {
     if (error) throw error;
 
-    if (compareSync(username, results[0].username) === 0) {
-      res.send("Cannot find username");
+    console.log("results: ", results);
+    console.log("username: ", username);
+    console.log("password: ", password);
+
+    if (results.length === 0) {
+      console.log("Cannot find username");
     } else {
-      if (compareSync(password, results[0].password)) {
-        res.send("success");
+      if (results[0].password === password) {
+        console.log("success");
       } else {
-        res.send("Password incorrect");
+        console.log("Password incorrect");
       }
     }
   });

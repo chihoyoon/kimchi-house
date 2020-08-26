@@ -1,14 +1,14 @@
 <hr class="m-0 bg-secondary" />
 
-<form action="/admin" method="post">
+<form action="/login" method="POST">
     <div class="form-row align-items-center pl-5">
         <div class="col-auto text-white">
             <label for="exampleInput">User Name</label>
-            <input type="text" class="form-control col-md" id="inlineFormInput" placeholder="username" />
+            <input type="text" class="form-control col-md" name="username" placeholder="username" />
         </div>
         <div class="col-auto text-white">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control col-md" id="exampleInputPassword1" placeholder="password" />
+            <input type="password" class="form-control col-md" name="password" placeholder="password" />
         </div>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary col-md">Submit</button>
