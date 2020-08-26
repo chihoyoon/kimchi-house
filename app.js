@@ -1,9 +1,11 @@
 const express = require("express");
 const hbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+const session = require("express-session");
 
 const app = express();
 
+const db = require("./lib/db");
 const index = require("./lib/index");
 const menu = require("./lib/menu");
 const blog = require("./lib/blog");
@@ -22,11 +24,20 @@ const a_delivery_m = require("./lib/admin_delivery_modify");
 const a_delivery_d = require("./lib/admin_delvery_delete");
 const a_delivery_c = require("./lib/admin_delivery_create");
 
-const db = require("./lib/db");
-
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      path: "/admin",
+      maxAge: 60000,
+    },
+  })
+);
 
 app.engine(
   "hbs",
@@ -40,6 +51,27 @@ app.engine(
 app.set("view engine", "hbs");
 
 app.use(express.static(__dirname + "/public"));
+
+var users = [];
+db.query("SELECT * from user", function (error, results) {
+  if (error) throw error;
+  for (let i = 0; i < results.length; i++) {
+    users.push({
+      username: results[i].username,
+      password: results[i].password,
+    });
+  }
+});
+
+const findUser = (username, password) => {
+  return users.find((v) => v.username === username && v.password === password);
+};
+
+const findUserIndex = (username, password) => {
+  return users.findIndex(
+    (v) => v.username === username && v.password === password
+  );
+};
 
 var _blog = [];
 var _menu = [];
@@ -65,28 +97,22 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  var username = req.body.username;
-  var password = req.body.password;
-  db.query("SELECT * from user", function (error, results) {
-    if (error) throw error;
+  var _username = req.body.username;
+  var _password = req.body.password;
 
-    console.log("results: ", results);
-    console.log("username: ", username);
-    console.log("password: ", password);
-
-    if (results.length === 0) {
-      console.log("Cannot find username");
+  if (users[0].username === _username) {
+    if (users[0].password === _password) {
+      console.log("success");
     } else {
-      if (results[0].password === password) {
-        console.log("success");
-      } else {
-        console.log("Password incorrect");
-      }
+      console.log("Password incorrect");
     }
-  });
+  } else {
+    console.log("Cannot find username");
+  }
 });
 
 app.get("/admin", (req, res) => {
+  const sess = req.session;
   res.render("admin");
 });
 
