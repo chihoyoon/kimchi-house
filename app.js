@@ -70,7 +70,7 @@ app.post("/login", (req, res) => {
   db.query("SELECT * from user", function (error, results) {
     if (error) throw error;
 
-    if (results.length === 0) {
+    if (compareSync(username, results[0].username) === 0) {
       res.send("Cannot find username");
     } else {
       if (compareSync(password, results[0].password)) {

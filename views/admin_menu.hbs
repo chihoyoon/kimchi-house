@@ -1,207 +1,203 @@
 <hr class="m-0 bg-secondary" />
 <div class="container text-white">
     <h1>MENU</h1>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_1}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_1}}
-            {{{this}}}
-            {{/menu_1}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_2}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_2}}
-            {{{this}}}
-            {{/menu_2}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_3}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_3}}
-            {{{this}}}
-            {{/menu_3}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_4}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_4}}
-            {{{this}}}
-            {{/menu_4}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_5}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_5}}
-            {{{this}}}
-            {{/menu_5}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_6}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_6}}
-            {{{this}}}
-            {{/menu_6}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_7}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_7}}
-            {{{this}}}
-            {{/menu_7}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_8}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_8}}
-            {{{this}}}
-            {{/menu_8}}
-        </tbody>
-    </table>
-</div>
-<div class="container text-white">
-    <h3>{{menu_class_9}}</h3>
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>MENU</th>
-                <th>PRICE</th>
-                <th>COMMENT</th>
-                <th>IMAGE</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#menu_9}}
-            {{{this}}}
-            {{/menu_9}}
-        </tbody>
-    </table>
-</div>
-<br>
-<hr class="m-0 bg-secondary" />
-<div class="container text-white">
-</div>
-<div class="row">
-    <div class="col-sm-4">
-        <form action="/admin/menu" method="POST">
-            <div class="col">
-                <input type="text" class="form-control" name="id" placeholder="ID" />
-            </div>
-            <div class="col">
-                <button type="submit" class="btn btn-primary col-md">MODIFY</button>
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="/admin/menu" method="POST">
+                <div class="col">
+                    <input type="text" class="form-control" name="id" placeholder="ID" />
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary col-md">MODIFY</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <a href="/admin/menu/create">
+                <button type="button" class="btn btn-primary col-md">CREATE</button>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <form action="/admin/blog/delete" method="POST">
+                <div class="col">
+                    <input type="text" class="form-control" name="id" placeholder="ID" />
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary col-md">DELETE</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="col-sm-4">
-        <a href="/admin/menu/create">
-            <button type="button" class="btn btn-primary col-md">CREATE</button>
-        </a>
+    <br>
+    <hr class="m-0 bg-secondary" />
+    <div class="container text-white">
+        <h3>{{menu_class_1}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_1}}
+                {{{this}}}
+                {{/menu_1}}
+            </tbody>
+        </table>
     </div>
-    <div class="col-sm-4">
-        <form action="/admin/blog/delete" method="POST">
-            <div class="col">
-                <input type="text" class="form-control" name="id" placeholder="ID" />
-            </div>
-            <div class="col">
-                <button type="submit" class="btn btn-primary col-md">DELETE</button>
-            </div>
-        </form>
+    <div class="container text-white">
+        <h3>{{menu_class_2}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_2}}
+                {{{this}}}
+                {{/menu_2}}
+            </tbody>
+        </table>
     </div>
-</div>
-</div>
+    <div class="container text-white">
+        <h3>{{menu_class_3}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_3}}
+                {{{this}}}
+                {{/menu_3}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-white">
+        <h3>{{menu_class_4}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_4}}
+                {{{this}}}
+                {{/menu_4}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-white">
+        <h3>{{menu_class_5}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_5}}
+                {{{this}}}
+                {{/menu_5}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-white">
+        <h3>{{menu_class_6}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_6}}
+                {{{this}}}
+                {{/menu_6}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-white">
+        <h3>{{menu_class_7}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_7}}
+                {{{this}}}
+                {{/menu_7}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-white">
+        <h3>{{menu_class_8}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_8}}
+                {{{this}}}
+                {{/menu_8}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-white">
+        <h3>{{menu_class_9}}</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MENU</th>
+                    <th>PRICE</th>
+                    <th>COMMENT</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#menu_9}}
+                {{{this}}}
+                {{/menu_9}}
+            </tbody>
+        </table>
+    </div>
