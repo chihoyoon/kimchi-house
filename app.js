@@ -33,8 +33,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      path: "/admin",
-      maxAge: 60000,
+      maxAge: 1000 * 60 * 60,
     },
   })
 );
@@ -56,10 +55,12 @@ var users = [];
 db.query("SELECT * from user", function (error, results) {
   if (error) throw error;
   for (let i = 0; i < results.length; i++) {
-    users.push({
+    var user = {
       username: results[i].username,
       password: results[i].password,
-    });
+      role: results[i].role,
+    };
+    users.push(user);
   }
 });
 
@@ -97,22 +98,24 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  var _username = req.body.username;
-  var _password = req.body.password;
-
-  if (users[0].username === _username) {
-    if (users[0].password === _password) {
-      console.log("success");
-    } else {
-      console.log("Password incorrect");
-    }
+  var username = req.body.username;
+  var password = req.body.password;
+  if (findUser(username, password)) {
+    req.session.username = findUserIndex(username, password);
+    req.session.Logined = true;
+    res.redirect("/admin");
   } else {
-    console.log("Cannot find username");
+    alert("Not valid");
+    res.redirect("/");
   }
 });
 
+app.get("/logout", (req, res) => {
+  delete req.session.user_uid;
+  res.redirect("/");
+});
+
 app.get("/admin", (req, res) => {
-  const sess = req.session;
   res.render("admin");
 });
 
