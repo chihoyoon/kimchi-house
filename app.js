@@ -9,20 +9,20 @@ const db = require("./lib/db");
 const index = require("./lib/index");
 const menu = require("./lib/menu");
 const blog = require("./lib/blog");
-const a_menu = require("./lib/admin_menu");
-const a_menu_p = require("./lib/admin_menu_post");
-const a_menu_m = require("./lib/admin_menu_modify");
-const a_menu_d = require("./lib/admin_menu_delete");
-const a_menu_c = require("./lib/admin_menu_create");
-const a_blog = require("./lib/admin_blog");
-const a_blog_p = require("./lib/admin_blog_post");
-const a_blog_m = require("./lib/admin_blog_modify");
-const a_blog_c = require("./lib/admin_menu_create");
-const a_blog_d = require("./lib/admin_blog_delete");
-const a_delivery = require("./lib/admin_delivery");
-const a_delivery_m = require("./lib/admin_delivery_modify");
-const a_delivery_d = require("./lib/admin_delvery_delete");
-const a_delivery_c = require("./lib/admin_delivery_create");
+const admin_menu = require("./lib/admin_menu");
+const admin_menu_post = require("./lib/admin_menu_post");
+const admin_menu_modify = require("./lib/admin_menu_modify");
+const admin_menu_delete = require("./lib/admin_menu_delete");
+const admin_menu_create = require("./lib/admin_menu_create");
+const admin_blog = require("./lib/admin_blog");
+const admin_blog_post = require("./lib/admin_blog_post");
+const admin_blog_modify = require("./lib/admin_blog_modify");
+const admin_blog_create = require("./lib/admin_menu_create");
+const admin_blog_delete = require("./lib/admin_blog_delete");
+const admin_delivery = require("./lib/admin_delivery");
+const admin_delivery_modify = require("./lib/admin_delivery_modify");
+const admin_delivery_delete = require("./lib/admin_delvery_delete");
+const admin_delivery_create = require("./lib/admin_delivery_create");
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -111,84 +111,156 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  delete req.session.user_uid;
+  delete req.session.username;
   res.redirect("/");
 });
 
 app.get("/admin", (req, res) => {
-  res.render("admin");
+  if (req.session.Logined) {
+    res.render("admin");
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/admin/menu", (req, res) => {
-  a_menu._body(req, res);
+  if (req.session.Logined) {
+    admin_menu._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/menu", (req, res) => {
-  a_menu_p._body(req, res);
+  if (req.session.Logined) {
+    admin_menu_post._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/menu/create", (req, res) => {
-  a_menu_c._body(req, res);
+  if (req.session.Logined) {
+    admin_menu_create._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/admin/menu/modify", (req, res) => {
-  res.render("admin_menu_modify", {
-    _menu: _menu,
-  });
+  if (req.session.Logined) {
+    res.render("admin_menu_modify", {
+      _menu: _menu,
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/menu/modify", (req, res) => {
-  a_menu_m._body(req, res);
+  if (req.session.Logined) {
+    admin_menu_modify._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/menu/delete", (req, res) => {
-  a_menu_d._body(req, res);
+  if (req.session.Logined) {
+    admin_menu_delete._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/admin/blog", (req, res) => {
-  a_blog._body(req, res);
+  if (req.session.Logined) {
+    admin_blog._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/blog", (req, res) => {
-  a_blog_p._body(req, res);
+  if (req.session.Logined) {
+    admin_blog_post._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/admin/blog/create", (req, res) => {
-  res.render("admin_blog_create");
+  if (req.session.Logined) {
+    res.render("admin_blog_create");
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/blog/create", (req, res) => {
-  a_blog_c._body(req, res);
+  if (req.session.Logined) {
+    admin_blog_create._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/admin/blog/modify", (req, res) => {
-  res.render("admin_blog_modify", {
-    _blog: _blog,
-  });
+  if (req.session.Logined) {
+    res.render("admin_blog_modify", {
+      _blog: _blog,
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/blog/modify", (req, res) => {
-  a_blog_m._body(req, res);
+  if (req.session.Logined) {
+    admin_blog_modify._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/blog/delete", (req, res) => {
-  a_blog_d._body(req, res);
+  if (req.session.Logined) {
+    admin_blog_delete._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.get("/admin/delivery", (req, res) => {
-  a_delivery._body(req, res);
+  if (req.session.Logined) {
+    admin_delivery._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/delivery/create", (req, res) => {
-  a_delivery_c._body(req, res);
+  if (req.session.Logined) {
+    admin_delivery_create._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/delivery/modify", (req, res) => {
-  a_delivery_m._body(req, res);
+  if (req.session.Logined) {
+    admin_delivery_modify._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.post("/admin/delivery/delete", (req, res) => {
-  a_delivery_d._body(req, res);
+  if (req.session.Logined) {
+    admin_delivery_delete._body(req, res);
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.use((req, res) => {
