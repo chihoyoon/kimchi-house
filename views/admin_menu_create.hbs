@@ -1,24 +1,26 @@
 {{> admin_header }}
 
-<form action="/admin/menu/create" method="post">
-    <div class="form-row">
-        <div class="col">
-            <input type="text" class="form-control" name="class_id" placeholder="CLASS" />
+<div class="container text-white">
+    <form action="/admin/menu/create" method="post">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" name="class_id" placeholder="CLASS" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="menu" placeholder="MENU" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="price" placeholder="PRICE" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="image" placeholder="IMAGE" />
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary col-md">CREATE</button>
+            </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" name="menu" placeholder="MENU" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" name="price" placeholder="PRICE" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" name="image" placeholder="IMAGE" />
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary col-md">CREATE</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
