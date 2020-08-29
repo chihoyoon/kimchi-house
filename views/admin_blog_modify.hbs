@@ -1,9 +1,32 @@
 {{> admin_header }}
 
+<br><br>
 <div class="container text-white">
-
+    <form>
+        <div class="form-row">
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="id" value="ID" />
+            </div>
+            <div class="col-8">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="tittle"
+                    value="TITTLE" />
+            </div>
+            <div class="col-3">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="author"
+                    value="AUTHOR" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <textarea readonly class="form-control bg-secondary text-warning"
+                    name="description">DESCRIPTION</textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<br><br>
+<div class="container text-white">
     <form action="/admin/blog/modify" method="post">
         {{{_blog}}}
     </form>
-
 </div>

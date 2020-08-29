@@ -1,25 +1,52 @@
 {{> admin_header }}
 
+<br><br>
 <div class="container text-white">
+    <form>
+        <div class="form-row">
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="class_id"
+                    value="CLASS ID" />
+            </div>
+            <div class="col-3">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="menu" value="MENU" />
+            </div>
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="price" value="PRICE" />
+            </div>
+            <div class="col-4">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="comment"
+                    value="COMMENT" />
+            </div>
+            <div class="col-2">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="image" value="IMAGE" />
+            </div>
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="button"
+                    value="CREATE" />
+            </div>
+        </div>
+    </form>
+    <br>
     <form action="/admin/menu/create" method="post">
         <div class="form-row">
-            <div class="col">
+            <div class="col-1">
                 <input type="text" class="form-control" name="class_id" placeholder="CLASS" />
             </div>
-            <div class="col">
+            <div class="col-3">
                 <input type="text" class="form-control" name="menu" placeholder="MENU" />
             </div>
-            <div class="col">
+            <div class="col-1">
                 <input type="text" class="form-control" name="price" placeholder="PRICE" />
             </div>
-            <div class="col">
+            <div class="col-4">
                 <input type="text" class="form-control" name="comment" placeholder="COMMENT" />
             </div>
-            <div class="col">
+            <div class="col-2">
                 <input type="text" class="form-control" name="image" placeholder="IMAGE" />
             </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary col-md">CREATE</button>
+            <div class="col-1">
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
             </div>
         </div>
     </form>

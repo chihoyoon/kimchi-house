@@ -1,5 +1,37 @@
 {{> admin_header }}
 
-<form action="/admin/menu/modify" method="post">
-    {{{_menu}}}
-</form>
+<br><br>
+<div class="container text-white">
+    <form>
+        <div class="form-row">
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="id" value="ID" />
+            </div>
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="class_id"
+                    value="CLASS ID" />
+            </div>
+            <div class="col-3">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="menu" value="MENU" />
+            </div>
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="price" value="PRICE" />
+            </div>
+            <div class="col-3">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="comment"
+                    value="COMMENT" />
+            </div>
+            <div class="col-2">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="image" value="IMAGE" />
+            </div>
+            <div class="col-1">
+                <input type="text" readonly class="form-control bg-secondary text-warning" name="button"
+                    value="MODIFY" />
+            </div>
+        </div>
+    </form>
+    <br>
+    <form action="/admin/menu/modify" method="post">
+        {{{_menu}}}
+    </form>
+</div>
