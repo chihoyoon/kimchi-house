@@ -17,9 +17,6 @@ const admin_delivery_modify = require("../lib/admin_delivery_modify");
 const admin_delivery_delete = require("../lib/admin_delvery_delete");
 const admin_delivery_create = require("../lib/admin_delivery_create");
 
-// const _blog = [];
-// const _menu = [];
-
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
@@ -51,17 +48,6 @@ router.post("/menu/create", (req, res) => {
   admin_menu_create._body(req, res);
 });
 
-// router.get("/menu/modify", async (req, res) => {
-//   if (req.session.Logined) {
-//     admin_menu_post._body();
-//     res.render("admin_menu_modify", {
-//       _menu: _menu,
-//     });
-//   } else {
-//     res.redirect("../");
-//   }
-// });
-
 router.post("/menu/modify", (req, res) => {
   admin_menu_modify._body(req, res);
 });
@@ -89,16 +75,6 @@ router.get("/blog/create", (req, res) => {
 router.post("/blog/create", (req, res) => {
   admin_blog_create._body(req, res);
 });
-
-// router.get("/blog/modify", (req, res) => {
-//   if (req.session.Logined) {
-//     res.render("admin_blog_modify", {
-//       _blog: _blog,
-//     });
-//   } else {
-//     res.redirect("../");
-//   }
-// });
 
 router.post("/blog/modify", (req, res) => {
   admin_blog_modify._body(req, res);
