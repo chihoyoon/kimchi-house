@@ -6,13 +6,13 @@
 
 2.  Purpose
 
-    (1) To help the store that are taking a serious blow to their operations due to the COVID.
-    This store is located in downtown, but a lot of office are closed and the floating population has declined due to the Corona crisis.
+    (1) To help the store that is taking a serious blow to their operations due to the COVID-19.
+    This store is located downtown, but a lot of offices are closed and the floating population has declined due to the Corona crisis.
 
     (2) To produce a store's website to maximize its promotional effect.
 
     (3) From a personal perspective,
-    It will help me to increase experience and learning about web production and operation through the project process.
+    It will help me to increase my experience and learning about web production and operation through the project process.
 
 3.  Client's Needs
 
@@ -22,7 +22,7 @@
 
     (3) To enter and modify important information on the website by himself.
 
-4.  Approximate appearance of the website to be implemented
+4.  The approximate appearance of the website to be implemented
 
     (1) Implement restaurant menus and prices in the form of tables.
 
