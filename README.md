@@ -1,6 +1,16 @@
 # Web development of small restaurant (Kimchi House)
 
-< project document>
+## Application Information
+
+1. Restaurant name : Kimchi House
+
+2. Location : Calgary, AB
+
+3. Website address : www.kimchihousecalgary.ca
+
+---
+
+## Project Document
 
 1.  Project Name: Web development of small restaurant (Kimchi House)
 
@@ -71,7 +81,30 @@
             date
             description
 
-        Delivery_service
+        Delivery_service(table)
             id
             Service
             website
+
+---
+
+## Developer's Comments
+
+My project is “web development of small restaurant.” This restaurant is "Kimchi House" which is located at china town in downtown. Because of COVID-19, sales at this restaurant have dropped sharply. They tried to improve sales, but it was difficult to recover the previous condition.
+
+I wanted to help them through my project. So, I contacted them and offered web development. They opened a website about 2 years ago, but they have not been managing it at all. They have not even modified the price change. For this reason, I wanted to organize the admin pages as well as regular pages, so that they could update without the help of the developer. Additionally, I thought I could make my progress through this project.
+
+First, I had a meeting with the restaurant owner to figure out what they needed and wanted. Next, I drew up project documents and simply sketched the site map. And, I arranged the layout of the website with Bootstrap.
+
+I configured the server with Node.js, and used the database with MySQL. The reason for using MySQL was that there was not much data and I wanted to join database tables.
+
+I used handlebars as an express template engine. Because I can use the HTML code that I made without modification. Of course, there was some discomfort because it was for static coding, but there was no problem with overall use.
+
+This web doesn’t need user pages. So I didn’t use ‘bcrypt’ or ‘passport’ for sign up or sign in. But I used ‘express session’ to keep the admin page logged in.
+
+I divided the admin pages into a separate router from the regular pages. And I made separate files of the extended code and used them like modules.
+
+This is a working application. This is a simple app, but I hope it will actually help them.
+
+I have committed about 80 times for this project in about a month. These show my questions and answers so far. I kept asking two questions. “Why isn't it working?”, and “why is it working?”
+The process of completing this project was the process of finding the answers.
