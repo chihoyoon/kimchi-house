@@ -2,11 +2,9 @@
 
 ## Application Information
 
-1. Restaurant name : Kimchi House
+1. Using Node.js, Bootstrap
 
-2. Location : Calgary, AB
-
-3. Website address : www.kimchihousecalgary.ca
+2. Using MySQL - CRUD(create, read, update, delete) => admin pages
 
 ---
 
@@ -104,7 +102,7 @@ This web doesn’t need user pages. So I didn’t use ‘bcrypt’ or ‘passpor
 
 I divided the admin pages into a separate router from the regular pages. And I made separate files of the extended code and used them like modules.
 
-This is a working application. This is a simple app, but I hope it will actually help them.
+This is a simple app, but I hope it will actually help them.
 
 I have committed about 80 times for this project in about a month. These show my questions and answers so far. I kept asking two questions. “Why isn't it working?”, and “why is it working?”
 The process of completing this project was the process of finding the answers.
