@@ -1,3 +1,6 @@
+# Data username & password
+/lib/db.js
+
 # Logs
 logs
 *.log
