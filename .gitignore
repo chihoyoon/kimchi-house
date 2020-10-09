@@ -1,5 +1,5 @@
 # Data username & password
-/lib/db.js
+/controllers/db.js
 
 # Logs
 logs

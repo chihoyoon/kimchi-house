@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 
-const index = require("../lib/index");
-const menu = require("../lib/menu");
-const blog = require("../lib/blog");
+const index = require("../controllers/index");
+const menu = require("../controllers/menu");
+const blog = require("../controllers/blog");
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
